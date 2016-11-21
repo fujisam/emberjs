@@ -1,0 +1,29 @@
+<div class="bs-example" data-example-id="contextual-table">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Character</th>
+            <th>Description</th>
+            <th>Last update</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each model.data.results as |character|}}
+            <tr class="active">
+                <td>{{#link-to "character" character.id}} {{character.name}} {{/link-to}}</td>
+                <td>{{character.description}}</td>
+                <td>{{date-format character.modified}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    <div class="row btn-group-pagination">
+        <div class="btn-group">
+            {{#each letters as |letter|}}
+                <button type="button" class="btn btn-default" {{action "listCharacter" letter}}>{{letter}}</button>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-lg-3 col-me-3 col-sm-3 character-image">
+            <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}">
+        </div>
+        <div class="col-lg-9 col-me-9 col-sm-9 character-info">
+            <h2>{{character.name}}
+                <button class="btn btn-default pull-right" type="button" onclick="javascript: window.history.back();">Voltar</button>
+            </h2>
+            <h4>{{character.description}}</h4>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    {{#each comics as |comic|}}
+        <div class="row">
+            <div class="col-lg-2 col-me-2 col-sm-2 comic-image">
+                <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+            </div>
+            <div class="col-lg-10 col-me-10 col-sm-10 comic-info">
+                <h4><strong>Título:</strong> {{comic.title}}</h4>
+                <h4><strong>Fascículo:</strong> {{comic.digitalId}}</h4>
+                <h4><strong>Descrição:</strong> {{comic.description}}</h4>
+            </div>
+        </div>
+        <hr>
+    {{/each}}
+</div>
+
+
